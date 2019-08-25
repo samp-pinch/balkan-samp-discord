@@ -236,4 +236,60 @@ Poziva se kada igrač označi kooridnate markerom na mapi.
 Poziva se kada igrač označi kooridnate markerom na mapi.
 
 **SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnPlayerClickPlayer
+
+{{else if eq (lower $n) (lower "OnPlayerUpdate")}}
+**- OnPlayerUpdate(playerid) -**
+> **playerid** - id igrača koji šalje podatke serveru.
+Poziva se kada god igrač pošalje podatak serveru. (oko !!**30/s**!!).
+
+**SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnPlayerUpdate
+
+{{else if eq (lower $n) (lower "OnPlayerClickPlayerTextDraw")}}
+**- OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid) .-**
+> **playerid** - id igrača koji je kliknuo TextDraw.
+> **playertextid** - id TextDrawa kog je igrač kliknuo.
+Poziva se kada igrač klikne PlayerTextDraw.
+
+**SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnPlayerClickPlayerTextDraw
+
+{{else if eq (lower $n) (lower "OnPlayerClickTextDraw")}}
+**- OnPlayerClickTextDraw(playerid, Text:clickedid) .-**
+> **playerid** - id igrača koji je kliknuo TextDraw.
+> **clickedid** - id TextDrawa kog je igrač kliknuo.
+Poziva se kada igrač klikne GlobalTextDraw.
+
+**SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnPlayerClickTextDraw
+
+{{else if eq (lower $n) (lower "OnObjectMoved")}}
+**- OnObjectMoved(objectid) .-**
+> **objectid** - id objekta koji je završio pomeranje.
+Poziva se kada objekat završi da se pomera (MoveObject).
+
+**SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnObjectMoved
+
+{{else if eq (lower $n) (lower "OnPlayerEditObject")}}
+**- OnPlayerEditObject(playerid, playerobject, objectid, response, Float:fX, Float:fY, Float:fZ, Float:fRotX, Float:fRotY, Float:fRotZ) .-**
+> **playerid** - id igrača koji edituje objekat.
+> **playerobject** - id player objekta (**0** ako je global : **1** ako je player)
+> **objectid** - id (model) editovanog objekta.
+> **response** - Vrsta edita (CANCEL/FINAL/UPDATE).
+> **objectid** - id (model) editovanog objekta.
+> **fX/fY/fZ** - X/Y/Z koordinate objekta koji je editovan.
+> **fRotX/fRotY/fRotZ** - RotX/RotY/RotZ rotacija objekta koji je editovan.
+Poziva se kada objekat završi da se pomera (MoveObject).
+
+**SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnPlayerEditObject
+
+{{else if eq (lower $n) (lower "OnPlayerEditAttachedObject")}}
+**- OnPlayerEditAttachedObject(playerid, response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ) .-**
+> **playerid** - id igrača koji je završio editovanje objekta.
+> **response** - da li je igrača sačuvao objekat (**0** ne : **1** da).
+> **modelid** - model editovanog objekta.
+> **boneid** - mesto na igračevom telu gde se editovani objekat nalazi.
+> **fOffsetX/fOffsetY/fOffsetZ** - X/Y/Z koordinate editovanog objekta.
+> **fRotX/fRotY/fRotZ** - rX/rY/rZ rotacija editovanog objekta.
+> **fScaleX/fScaleY/fScaleZ** - X/Y/Z veličina editovanog objekta.
+Poziva se kada igrač završi editovanje attachovanog objekta.
+
+**SA-MP Wiki:** https://wiki.sa-mp.com/wiki/OnPlayerEditAttachedObject
 {{end}}
